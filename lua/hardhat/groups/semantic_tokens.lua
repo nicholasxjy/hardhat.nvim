@@ -18,23 +18,23 @@ function M.get(p, _opts)
     -- ---------------------------------------------------------------------------
     -- IDENTIFIERS
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.variable"]                     = {},
-    ["@lsp.type.property"]                     = {},
-    ["@lsp.type.parameter"]                    = { fg = p.blue_light },
+    ["@lsp.type.variable"]                     = { link = "@variable" },
+    ["@lsp.type.property"]                     = { link = "@property" },
+    ["@lsp.type.parameter"]                    = { link = "@variable.parameter" },
 
-    ["@lsp.typemod.variable.callable"]         = { fg = p.green },
-    ["@lsp.typemod.variable.static"]           = { fg = p.blue },
-    ["@lsp.typemod.variable.defaultLibrary"]   = { fg = p.cyan_dim },
+    ["@lsp.typemod.variable.callable"]         = { link = "@function.call" },
+    ["@lsp.typemod.variable.static"]           = { link = "@variable.member" },
+    ["@lsp.typemod.variable.defaultLibrary"]   = { link = "@variable.builtin" },
     ["@lsp.typemod.variable.injected"]         = { italic = true },
 
     -- ---------------------------------------------------------------------------
     -- KEYWORDS
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.keyword"]                      = {},
-    ["@lsp.typemod.keyword.async"]             = { fg = p.green_dim },
+    ["@lsp.type.keyword"]                      = { link = "@keyword" },
+    ["@lsp.typemod.keyword.async"]             = { link = "@keyword.coroutine" },
     ["@lsp.typemod.keyword.injected"]          = { italic = true },
 
-    ["@lsp.type.modifier"]                     = {},
+    ["@lsp.type.modifier"]                     = { link = "@keyword.modifier" },
 
     ["@lsp.type.operator"]                     = { link = "@operator" },
     ["@lsp.typemod.operator.injected"]         = { italic = true },
@@ -42,8 +42,8 @@ function M.get(p, _opts)
     -- ---------------------------------------------------------------------------
     -- FUNCTIONS & METHODS
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.function"]                     = {},
-    ["@lsp.type.method"]                       = {},
+    ["@lsp.type.function"]                     = { link = "@function" },
+    ["@lsp.type.method"]                       = { link = "@function.method" },
 
     ["@lsp.typemod.function.defaultLibrary"]   = { fg = p.cyan },
     ["@lsp.typemod.method.defaultLibrary"]     = { fg = p.cyan },
@@ -51,15 +51,15 @@ function M.get(p, _opts)
     -- ---------------------------------------------------------------------------
     -- TYPES
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.struct"]                       = {},
-    ["@lsp.type.class"]                        = {},
-    ["@lsp.type.namespace"]                    = {},
-    ["@lsp.type.event"]                        = {},
+    ["@lsp.type.struct"]                       = { link = "@type" },
+    ["@lsp.type.class"]                        = { link = "@type" },
+    ["@lsp.type.namespace"]                    = { link = "@module" },
+    ["@lsp.type.event"]                        = { link = "@property" },
 
     ["@lsp.type.enum"]                         = { fg = p.orange_dim },
     ["@lsp.type.enumMember"]                   = { fg = p.orange },
 
-    ["@lsp.type.type"]                         = {},
+    ["@lsp.type.type"]                         = { link = "@type" },
     ["@lsp.type.typeAlias"]                    = { fg = p.yellow_dim },
     ["@lsp.type.typeParameter"]                = { fg = p.purple_light },
     ["@lsp.type.generic"]                      = { fg = p.purple_dim },
@@ -87,7 +87,7 @@ function M.get(p, _opts)
     -- ---------------------------------------------------------------------------
     -- METAPROGRAMMING
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.macro"]                        = {},
+    ["@lsp.type.macro"]                        = { link = "@function.macro" },
     ["@lsp.typemod.macro.defaultLibrary"]      = { fg = p.cyan_light },
 
     ["@lsp.type.decorator"]                    = { fg = p.blue_light, italic = true },
@@ -106,7 +106,7 @@ function M.get(p, _opts)
     -- ---------------------------------------------------------------------------
     -- MODS
     -- ---------------------------------------------------------------------------
-    ["@lsp.mod.declaration"]                   = {},
+    ["@lsp.mod.declaration"]                   = { bold = true },
     ["@lsp.mod.deprecated"]                    = { sp = p.red, strikethrough = true },
     ["@lsp.typemod.macro.globalScope"]         = { fg = p.orange_light },
   }

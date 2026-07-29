@@ -21,18 +21,18 @@ function M.get(p, _opts)
     Cursor                   = { fg = p.bg, bg = p.fg },
     lCursor                  = { fg = p.bg, bg = p.fg },
     CursorIM                 = { fg = p.bg, bg = p.fg },
-    CursorLine               = { bg = p.accent1 },
-    CursorColumn             = { bg = p.accent1 },
+    CursorLine               = { bg = p.bg_light },
+    CursorColumn             = { bg = p.bg_light },
     CursorLineFold           = { fg = p.accent3 },
     CursorLineSign           = { fg = p.accent3 },
     ColorColumn              = { bg = p.accent1 },
 
-    MatchParen               = { bg = p.accent2, bold = true },
+    MatchParen               = { fg = p.yellow_light, bg = p.accent2, bold = true },
 
     LineNr                   = { fg = p.black_light },
     LineNrAbove              = { link = "LineNr" },
     LineNrBelow              = { link = "LineNr" },
-    CursorLineNr             = { fg = p.yellow_dim, bold = true },
+    CursorLineNr             = { fg = p.yellow, bold = true },
 
     VertSplit                = { fg = p.bg_dark, bg = p.bg },
     WinSeparator             = { fg = p.bg_dark, bg = p.bg },
@@ -101,7 +101,7 @@ function M.get(p, _opts)
     Float                    = { fg = p.red_light },
 
     Identifier               = { fg = p.fg },
-    Function                 = { fg = p.green },
+    Function                 = { fg = p.yellow },
 
     Statement                = { fg = p.orange },
     Conditional              = { fg = p.yellow },
@@ -111,22 +111,22 @@ function M.get(p, _opts)
     Keyword                  = { fg = p.orange },
     Exception                = { fg = p.red },
 
-    Include                  = { fg = p.red_dim },
+    Include                  = { fg = p.orange_dim },
     PreProc                  = { fg = p.orange },
     Define                   = { fg = p.orange },
     PreCondit                = { fg = p.orange },
     Macro                    = { fg = p.orange_light },
 
-    Type                     = { fg = p.yellow_dim },
+    Type                     = { fg = p.yellow },
     StorageClass             = { fg = p.yellow_dim },
-    Structure                = { fg = p.yellow_dim },
+    Structure                = { fg = p.yellow },
     Typedef                  = { fg = p.orange },
 
     Special                  = { fg = p.orange },
     SpecialChar              = { fg = p.blue_light },
     SpecialComment           = { link = "Special" },
     Tag                      = { fg = p.orange },
-    Delimiter                = { fg = p.white_dim },
+    Delimiter                = { fg = p.white },
     Debug                    = { fg = p.red },
 
     Bold                     = { bold = true },
@@ -218,7 +218,7 @@ function M.get(p, _opts)
     LspSignatureActiveParameter  = { link = "LspReferenceText" },
     LspCodeLens                  = { link = "Comment" },
     LspCodeLensSeparator         = { link = "Comment" },
-    LspInlayHint                 = { fg = p.black_light, italic = true },
+    LspInlayHint                 = { fg = p.white_dim, italic = true },
     LspInfoBorder                = { fg = p.yellow_dim, bg = p.bg },
 
     --              >>> Built-in markdown syntax <<<

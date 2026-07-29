@@ -24,7 +24,7 @@ function M.get(p, _opts)
     ["@character.special"]       = { link = "SpecialChar" },
 
     ["@constant"]                = { fg = p.orange },
-    ["@constant.builtin"]        = { fg = p.red_light },
+    ["@constant.builtin"]        = { fg = p.cyan_dim },
     ["@constant.macro"]          = { fg = p.orange_light },
 
     -- -----------------------------------------------------------------
@@ -33,6 +33,7 @@ function M.get(p, _opts)
     ["@variable"]                = { fg = p.fg },
     ["@variable.builtin"]        = { fg = p.cyan_dim },
     ["@variable.parameter"]      = { fg = p.blue_light },
+    ["@variable.parameter.builtin"] = { fg = p.cyan_dim, italic = true },
     ["@variable.member"]         = { fg = p.blue },
     ["@property"]                = { fg = p.blue },
 
@@ -62,7 +63,7 @@ function M.get(p, _opts)
     ["@keyword.exception"]       = { fg = p.green_dim },
     ["@keyword.debug"]           = { fg = p.cyan, bold = true },
 
-    ["@keyword.import"]          = { fg = p.red_dim },
+    ["@keyword.import"]          = { fg = p.orange_dim },
 
     ["@label"]                   = { fg = p.yellow },
     ["@storageclass"]            = { fg = p.orange_dim },
@@ -71,8 +72,8 @@ function M.get(p, _opts)
     -- FUNCTIONS & METHODS
     -- -----------------------------------------------------------------
     ["@function"]                = { fg = p.yellow },
-    ["@function.method"]         = { fg = p.yellow },
-    ["@function.method.call"]    = { fg = p.green },
+    ["@function.method"]         = { fg = p.yellow_dim },
+    ["@function.method.call"]    = { fg = p.green_light },
 
     ["@function.call"]           = { fg = p.green },
     ["@function.macro"]          = { fg = p.yellow_light },
@@ -120,7 +121,7 @@ function M.get(p, _opts)
     -- COMMENTS
     -- -----------------------------------------------------------------
     ["@comment"]                 = { fg = p.black_light },
-    ["@comment.documentation"]   = { fg = p.black_light },
+    ["@comment.documentation"]   = { fg = p.black_light, italic = true },
 
     ["@comment.todo"]            = { fg = p.blue, bold = true },
     ["@comment.warning"]         = { fg = p.yellow },
@@ -143,14 +144,14 @@ function M.get(p, _opts)
     ["@markup.strikethrough"]    = { strikethrough = true },
     ["@markup.underline"]        = { underline = true },
 
-    ["@markup.raw"]              = { fg = p.yellow },
+    ["@markup.raw"]              = { fg = p.yellow_dim },
     ["@markup.raw.block"]        = { link = "@markup.raw" },
     ["@markup.quote"]            = { link = "@string.special" },
     ["@markup.math"]             = { link = "@string.special" },
 
     ["@markup.link"]             = { fg = p.cyan, underline = true },
     ["@markup.link.label"]       = { fg = p.blue },
-    ["@markup.link.url"]         = { fg = p.fg, underline = true },
+    ["@markup.link.url"]         = { fg = p.cyan_light, underline = true },
 
     ["@markup.list"]             = { fg = p.red },
     ["@markup.list.checked"]     = { link = "DiagnosticOk" },
@@ -168,7 +169,7 @@ function M.get(p, _opts)
     -- -----------------------------------------------------------------
     ["@tag"]                     = { fg = p.orange },
     ["@tag.delimiter"]           = { fg = p.white_dim },
-    ["@tag.attribute"]           = { fg = p.blue },
+    ["@tag.attribute"]           = { fg = p.blue_light },
     ["@tag.qualifier"]           = { fg = p.cyan_dim },
     ["@tag.builtin"]             = { fg = p.orange_dim },
     ["@tag.tsx"]                 = { fg = p.cyan, bold = true },

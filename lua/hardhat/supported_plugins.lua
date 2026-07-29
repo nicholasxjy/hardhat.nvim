@@ -15,4 +15,7 @@ return {
 	dashboard        = true,
 	lazy             = true,
 	mini             = true,
+	snacks           = true,
+	noice            = true,
+	navic            = true,
 }

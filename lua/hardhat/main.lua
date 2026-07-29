@@ -25,6 +25,12 @@ local function paint(syntax, opts)
 	}
 
 	for group, hl in pairs(syntax) do
+		-- convert string shorthand (e.g. "@boolean") to { link = "..." }
+		if type(hl) == "string" then
+			hl = { link = hl }
+			syntax[group] = hl
+		end
+
 		if not hl.link then
 			-- global bold/italics
 			hl.bold = styles.bold ~= false and hl.bold

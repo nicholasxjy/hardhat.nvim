@@ -90,6 +90,14 @@ function M.get(p, _opts)
 
     --              >>> Help <<<
     helpCommand              = { fg = p.blue, bg = p.bg_light },
+    helpExample              = { fg = p.black_light },
+
+    --              >>> HTML <<<
+    htmlH1                   = { fg = p.orange, bold = true },
+    htmlH2                   = { fg = p.yellow, bold = true },
+
+    --              >>> INI / dosini <<<
+    dosIniLabel              = { link = "@property" },
 
     --              >>> Std Syntax <<<
     Comment                  = { fg = p.black_light },
@@ -215,11 +223,12 @@ function M.get(p, _opts)
     LspReferenceText             = { bg = p.accent2 },
     LspReferenceRead             = { link = "LspReferenceText" },
     LspReferenceWrite            = { link = "LspReferenceText" },
-    LspSignatureActiveParameter  = { link = "LspReferenceText" },
+    LspSignatureActiveParameter  = { bg = p.accent2, bold = true },
     LspCodeLens                  = { link = "Comment" },
     LspCodeLensSeparator         = { link = "Comment" },
     LspInlayHint                 = { fg = p.white_dim, italic = true },
     LspInfoBorder                = { fg = p.yellow_dim, bg = p.bg },
+    ComplHint                    = { fg = p.black_light },
 
     --              >>> Built-in markdown syntax <<<
     markdownH1               = { link = "@markup.heading.1" },

@@ -5,81 +5,82 @@ function M.get(p, _opts)
     -- ---------------------------------------------------------------------------
     -- LITERALS
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.boolean"]                      = { fg = p.red },
-    ["@lsp.type.number"]                       = { fg = p.red_light },
+    ["@lsp.type.boolean"]                      = "@boolean",
+    ["@lsp.type.number"]                       = "@number",
 
-    ["@lsp.type.string"]                       = { fg = p.white_light },
-    ["@lsp.typemod.string.injected"]           = { italic = true },
+    ["@lsp.type.string"]                       = "@string",
+    ["@lsp.typemod.string.injected"]           = "@string",
 
-    ["@lsp.type.regexp"]                       = { fg = p.green_light },
-    ["@lsp.type.escapeSequence"]               = { fg = p.green_light },
-    ["@lsp.type.formatSpecifier"]              = { fg = p.green_light },
+    ["@lsp.type.regexp"]                       = "@string.special.regexp",
+    ["@lsp.type.escapeSequence"]               = "@string.escape",
+    ["@lsp.type.formatSpecifier"]              = "@markup.list",
 
     -- ---------------------------------------------------------------------------
     -- IDENTIFIERS
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.variable"]                     = { link = "@variable" },
-    ["@lsp.type.property"]                     = { link = "@property" },
-    ["@lsp.type.parameter"]                    = { link = "@variable.parameter" },
+    ["@lsp.type.variable"]                     = {}, -- use treesitter styles for regular variables
+    ["@lsp.type.property"]                     = "@property",
+    ["@lsp.type.parameter"]                    = "@variable.parameter",
 
-    ["@lsp.typemod.variable.callable"]         = { link = "@function.call" },
-    ["@lsp.typemod.variable.static"]           = { link = "@variable.member" },
-    ["@lsp.typemod.variable.defaultLibrary"]   = { link = "@variable.builtin" },
-    ["@lsp.typemod.variable.injected"]         = { italic = true },
+    ["@lsp.typemod.variable.callable"]         = "@function",
+    ["@lsp.typemod.variable.static"]           = "@constant",
+    ["@lsp.typemod.variable.defaultLibrary"]   = "@variable.builtin",
+    ["@lsp.typemod.variable.injected"]         = "@variable",
 
     -- ---------------------------------------------------------------------------
     -- KEYWORDS
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.keyword"]                      = { link = "@keyword" },
-    ["@lsp.typemod.keyword.async"]             = { link = "@keyword.coroutine" },
-    ["@lsp.typemod.keyword.injected"]          = { italic = true },
+    ["@lsp.type.keyword"]                      = "@keyword",
+    ["@lsp.typemod.keyword.async"]             = "@keyword.coroutine",
+    ["@lsp.typemod.keyword.injected"]          = "@keyword",
 
-    ["@lsp.type.modifier"]                     = { link = "@keyword.modifier" },
+    ["@lsp.type.modifier"]                     = "@keyword.modifier",
 
-    ["@lsp.type.operator"]                     = { link = "@operator" },
-    ["@lsp.typemod.operator.injected"]         = { italic = true },
+    ["@lsp.type.operator"]                     = "@operator",
+    ["@lsp.typemod.operator.injected"]         = "@operator",
 
     -- ---------------------------------------------------------------------------
     -- FUNCTIONS & METHODS
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.function"]                     = { link = "@function" },
-    ["@lsp.type.method"]                       = { link = "@function.method" },
+    ["@lsp.type.function"]                     = "@function",
+    ["@lsp.type.method"]                       = "@function.method",
 
-    ["@lsp.typemod.function.defaultLibrary"]   = { fg = p.cyan },
-    ["@lsp.typemod.method.defaultLibrary"]     = { fg = p.cyan },
+    ["@lsp.typemod.function.defaultLibrary"]   = "@function.builtin",
+    ["@lsp.typemod.method.defaultLibrary"]     = "@function.builtin",
 
     -- ---------------------------------------------------------------------------
     -- TYPES
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.struct"]                       = { link = "@type" },
-    ["@lsp.type.class"]                        = { link = "@type" },
-    ["@lsp.type.namespace"]                    = { link = "@module" },
-    ["@lsp.type.event"]                        = { link = "@property" },
+    ["@lsp.type.struct"]                       = "@type",
+    ["@lsp.type.class"]                        = "@type",
+    ["@lsp.type.namespace"]                    = "@module",
+    ["@lsp.type.namespace.python"]             = "@variable",
+    ["@lsp.type.event"]                        = "@property",
 
-    ["@lsp.type.enum"]                         = { fg = p.orange_dim },
-    ["@lsp.type.enumMember"]                   = { fg = p.orange },
+    ["@lsp.type.enum"]                         = "@type",
+    ["@lsp.type.enumMember"]                   = "@constant",
 
-    ["@lsp.type.type"]                         = { link = "@type" },
-    ["@lsp.type.typeAlias"]                    = { fg = p.yellow_dim },
+    ["@lsp.type.type"]                         = "@type",
+    ["@lsp.type.typeAlias"]                    = "@type.definition",
     ["@lsp.type.typeParameter"]                = { fg = p.purple_light },
-    ["@lsp.type.generic"]                      = { fg = p.purple_dim },
+    ["@lsp.type.generic"]                      = "@variable",
     ["@lsp.type.interface"]                    = { fg = p.purple },
 
-    ["@lsp.type.lifetime"]                     = { fg = p.blue_dim, italic = true },
+    ["@lsp.type.lifetime"]                     = "@keyword.storage",
 
     -- ---------------------------------------------------------------------------
     -- TYPES (BUILTIN / STDLIB)
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.selfKeyword"]                  = { fg = p.cyan_dim, italic = true },
-    ["@lsp.type.selfTypeKeyword"]              = { fg = p.cyan_dim, italic = true },
+    ["@lsp.type.selfKeyword"]                  = "@variable.builtin",
+    ["@lsp.type.selfTypeKeyword"]              = "@variable.builtin",
 
-    ["@lsp.type.builtinType"]                  = { fg = p.orange_dim },
-    ["@lsp.typemod.class.defaultLibrary"]      = { fg = p.cyan },
+    ["@lsp.type.builtinType"]                  = "@type.builtin",
+    ["@lsp.typemod.class.defaultLibrary"]      = "@type.builtin",
 
-    ["@lsp.typemod.struct.defaultLibrary"]     = { fg = p.orange_dim },
+    ["@lsp.typemod.struct.defaultLibrary"]     = "@type.builtin",
 
-    ["@lsp.typemod.enum.defaultLibrary"]       = { fg = p.orange_dim },
-    ["@lsp.typemod.enumMember.defaultLibrary"] = { fg = p.orange },
+    ["@lsp.typemod.enum.defaultLibrary"]       = "@type.builtin",
+    ["@lsp.typemod.enumMember.defaultLibrary"] = "@constant.builtin",
 
     ["@lsp.typemod.type.defaultLibrary"]       = { fg = p.orange_dim },
     ["@lsp.typemod.typeAlias.defaultLibrary"]  = { fg = p.orange_dim },
@@ -87,28 +88,28 @@ function M.get(p, _opts)
     -- ---------------------------------------------------------------------------
     -- METAPROGRAMMING
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.macro"]                        = { link = "@function.macro" },
-    ["@lsp.typemod.macro.defaultLibrary"]      = { fg = p.cyan_light },
+    ["@lsp.type.macro"]                        = "@function.macro",
+    ["@lsp.typemod.macro.defaultLibrary"]      = "@function.builtin",
+    ["@lsp.typemod.macro.globalScope"]         = { fg = p.orange_light },
 
-    ["@lsp.type.decorator"]                    = { fg = p.blue_light, italic = true },
-    ["@lsp.type.deriveHelper"]                 = { fg = p.blue_light, italic = true },
+    ["@lsp.type.decorator"]                    = "@attribute",
+    ["@lsp.type.deriveHelper"]                 = "@attribute",
 
     -- ---------------------------------------------------------------------------
     -- DIAGNOSTICS
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.unresolvedReference"]          = { fg = p.red, bold = true },
+    ["@lsp.type.unresolvedReference"]          = { undercurl = true, sp = p.red },
 
     -- ---------------------------------------------------------------------------
     -- DOCUMENTATION
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.comment"]                      = { link = "@comment" },
+    ["@lsp.type.comment"]                      = "@comment",
 
     -- ---------------------------------------------------------------------------
     -- MODS
     -- ---------------------------------------------------------------------------
     ["@lsp.mod.declaration"]                   = { bold = true },
     ["@lsp.mod.deprecated"]                    = { sp = p.red, strikethrough = true },
-    ["@lsp.typemod.macro.globalScope"]         = { fg = p.orange_light },
   }
 end
 

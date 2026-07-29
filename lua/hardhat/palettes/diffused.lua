@@ -19,9 +19,9 @@ M.load_colors = function()
     red_light     = "#d46d63",
     red_dim       = "#9b372e",
 
-    green         = "#aeb417",
-    green_light   = "#b9bf6a",
-    green_dim     = "#9fa313",
+    green         = "#4dab2e",
+    green_light   = "#72be58",
+    green_dim     = "#3e8e23",
 
     yellow        = "#c2a004",
     yellow_light  = "#cfb462",

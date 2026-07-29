@@ -1,13 +1,25 @@
 local M = {}
 
 -- Core groups are always loaded
-M.core = { "base" }
+M.core = { "base", "kinds" }
 
 -- Optional groups map plugin_support keys to group module names
 M.optional = {
-  treesitter = "treesitter",
-  lsp        = "semantic_tokens",
-  neotree    = "neotree",
+  treesitter      = "treesitter",
+  lsp             = "semantic_tokens",
+  neotree         = "neotree",
+  telescope       = "telescope",
+  gitsigns        = "gitsigns",
+  cmp             = "cmp",
+  blink           = "blink",
+  which_key       = "which_key",
+  indent_blankline= "indent_blankline",
+  notify          = "notify",
+  flash           = "flash",
+  trouble         = "trouble",
+  illuminate      = "illuminate",
+  dashboard       = "dashboard",
+  lazy            = "lazy",
 }
 
 function M.setup(p, opts)

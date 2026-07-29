@@ -20,6 +20,7 @@ M.optional = {
   illuminate      = "illuminate",
   dashboard       = "dashboard",
   lazy            = "lazy",
+  mini            = "mini",
 }
 
 function M.setup(p, opts)

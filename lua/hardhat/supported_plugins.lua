@@ -14,4 +14,5 @@ return {
 	illuminate       = true,
 	dashboard        = true,
 	lazy             = true,
+	mini             = true,
 }

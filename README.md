@@ -131,6 +131,19 @@ Controls plugin-specific highlight layers.
 - `lsp`
 - `treesitter`
 - `neotree`
+- `telescope`
+- `gitsigns`
+- `cmp`
+- `blink`
+- `which_key`
+- `indent_blankline`
+- `notify`
+- `flash`
+- `trouble`
+- `illuminate`
+- `dashboard`
+- `lazy`
+- `mini`
 
 </details>
 

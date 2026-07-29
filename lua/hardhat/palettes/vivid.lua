@@ -2,18 +2,18 @@ local M = {}
 
 M.load_colors = function()
   return {
-    fg            = "#d5dde6",
+    fg            = "#e0e7ef",
     bg            = "#15181b",
 
     bg_light      = "#1c2125",
     bg_dark       = "#0c0f12",
 
-    accent1       = "#1e2429",
-    accent2       = "#2c343c",
-    accent3       = "#4a545e",
+    accent1       = "#232a30",
+    accent2       = "#36414a",
+    accent3       = "#5a6672",
 
     black         = "#0a0c0e",
-    black_light   = "#7d8a92",
+    black_light   = "#919ea7",
 
     red           = "#ef5849",
     red_light     = "#f37b6f",
@@ -41,7 +41,7 @@ M.load_colors = function()
 
     white         = "#c6ccd1",
     white_light   = "#dde1e4",
-    white_dim     = "#94999d",
+    white_dim     = "#a2a8ad",
 
     purple        = "#a07ae0",
     purple_light  = "#be9eea",

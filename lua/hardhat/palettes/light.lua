@@ -19,9 +19,9 @@ M.load_colors = function()
     red_light     = "#c95b53",
     red_dim       = "#982f29",
 
-    green         = "#789715",
-    green_light   = "#91ab3a",
-    green_dim     = "#648113",
+    green         = "#348a18",
+    green_light   = "#54a534",
+    green_dim     = "#276c11",
 
     yellow        = "#af8d08",
     yellow_light  = "#c19c33",
@@ -42,6 +42,10 @@ M.load_colors = function()
     white         = "#4a545e",
     white_light   = "#616d78",
     white_dim     = "#788490",
+
+    purple        = "#6246a0",
+    purple_light  = "#8268bc",
+    purple_dim    = "#523a88",
   }
 end
 

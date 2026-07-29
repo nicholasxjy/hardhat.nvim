@@ -1,10 +1,10 @@
 local M = {}
 
-M.load_plugin_syntax = function(p)
+function M.get(p, _opts)
   return {
-    -- ---------------------------------------------------------------
+    -- -----------------------------------------------------------------
     -- LITERALS
-    -- ---------------------------------------------------------------
+    -- -----------------------------------------------------------------
     ["@number"]                  = { fg = p.red_light },
     ["@float"]                   = { fg = p.red_light },
     ["@number.float"]            = { link = "@float" },
@@ -88,11 +88,11 @@ M.load_plugin_syntax = function(p)
     ["@type"]                    = { fg = p.yellow_dim },
     ["@type.definition"]         = { fg = p.yellow },
     ["@type.qualifier"]          = { link = "StorageClass" },
-
-    ["@type.builtin"]            = { fg = p.orange_dim },
+    ["@type.builtin"]            = { fg = p.purple },
 
     ["@constructor"]             = { fg = p.yellow },
     ["@attribute"]               = { link = "Macro" },
+    ["@attribute.builtin"]       = { fg = p.purple_dim },
 
     ["@module"]                  = { fg = p.cyan_dim },
     ["@module.builtin"]          = { fg = p.cyan_dim },
@@ -128,7 +128,7 @@ M.load_plugin_syntax = function(p)
     ["@comment.note"]            = { fg = p.green },
 
     -- -----------------------------------------------------------------
-    -- MARKUP (new tree-sitter groups)
+    -- MARKUP
     -- -----------------------------------------------------------------
     ["@markup.heading"]          = { fg = p.blue, bold = true },
     ["@markup.heading.1"]        = { fg = p.orange, bold = true },
@@ -157,7 +157,7 @@ M.load_plugin_syntax = function(p)
     ["@markup.list.unchecked"]   = { link = "DiagnosticWarn" },
 
     -- -----------------------------------------------------------------
-    -- DIFF (new tree-sitter groups)
+    -- DIFF
     -- -----------------------------------------------------------------
     ["@diff.plus"]               = { link = "diffAdded" },
     ["@diff.minus"]              = { link = "diffRemoved" },
@@ -194,7 +194,7 @@ M.load_plugin_syntax = function(p)
     ["@text.emphasis"]           = { italic = true },
     ["@text.strike"]             = { strikethrough = true },
     ["@text.underline"]          = { underline = true },
-    }
+  }
 end
 
 return M

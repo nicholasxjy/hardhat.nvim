@@ -1,14 +1,14 @@
 local M = {}
 
-M.load_plugin_syntax = function(p)
+function M.get(p, _opts)
   return {
     NeoTreeNormal         = { fg = p.white_dim, bg = p.bg_dark },
     NeoTreeNormalNC       = { fg = p.white_dim, bg = p.bg_dark },
     NeoTreeFloatNormal    = { fg = p.white_dim, bg = p.bg_dark },
     NeoTreeFloatBorder    = { fg = p.white_dim, bg = p.bg_dark },
     NeoTreeEndOfBuffer    = { fg = p.bg_dark, bg = p.bg_dark },
-    NeoTreeWinSeparator   = { fg = p.bg},
-    NeoTreeVertSplit      = { fg = p.bg},
+    NeoTreeWinSeparator   = { fg = p.bg },
+    NeoTreeVertSplit      = { fg = p.bg },
 
     NeoTreeDirectoryIcon  = { fg = p.black_light },
     NeoTreeDirectoryName  = { fg = p.white_dim },

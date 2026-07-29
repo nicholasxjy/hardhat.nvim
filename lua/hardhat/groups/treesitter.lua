@@ -5,38 +5,38 @@ function M.get(p, _opts)
     -- -----------------------------------------------------------------
     -- LITERALS
     -- -----------------------------------------------------------------
-    ["@number"]                  = { fg = p.red_light },
-    ["@float"]                   = { fg = p.red_light },
-    ["@number.float"]            = { link = "@float" },
-    ["@boolean"]                 = { fg = p.red_light },
+    ["@number"]                  = { link = "Number" },
+    ["@float"]                   = { link = "Float" },
+    ["@number.float"]            = { link = "Float" },
+    ["@boolean"]                 = { link = "Boolean" },
 
-    ["@string"]                  = { fg = p.white_light },
-    ["@string.documentation"]    = { fg = p.yellow_dim },
-    ["@string.escape"]           = { fg = p.green_light },
-    ["@string.special"]          = { fg = p.red },
-    ["@string.regexp"]           = { link = "@string.special.regexp" },
-    ["@string.special.regexp"]   = { fg = p.red, bold = true },
-    ["@string.special.url"]      = { fg = p.cyan, underline = true },
+    ["@string"]                  = { link = "String" },
+    ["@string.documentation"]    = { fg = p.yellow },
+    ["@string.escape"]           = { fg = p.purple },
+    ["@string.special"]          = { link = "Special" },
+    ["@string.regexp"]           = { fg = p.blue_dim },
+    ["@string.special.regexp"]   = { fg = p.blue_dim },
+    ["@string.special.url"]      = { link = "Underlined" },
     ["@string.special.symbol"]   = { link = "@constant" },
     ["@string.special.path"]     = { link = "Directory" },
 
-    ["@character"]               = { fg = p.white_light },
+    ["@character"]               = { link = "Character" },
     ["@character.special"]       = { link = "SpecialChar" },
     ["@character.printf"]        = { link = "SpecialChar" },
 
-    ["@constant"]                = { fg = p.orange },
-    ["@constant.builtin"]        = { fg = p.cyan_dim },
+    ["@constant"]                = { link = "Constant" },
+    ["@constant.builtin"]        = { link = "Special" },
     ["@constant.macro"]          = { link = "Define" },
 
     -- -----------------------------------------------------------------
     -- IDENTIFIERS
     -- -----------------------------------------------------------------
     ["@variable"]                = { fg = p.fg },
-    ["@variable.builtin"]        = { fg = p.cyan_dim },
-    ["@variable.parameter"]      = { fg = p.blue_light },
-    ["@variable.parameter.builtin"] = { fg = p.cyan_dim, italic = true },
-    ["@variable.member"]         = { fg = p.blue },
-    ["@property"]                = { fg = p.blue },
+    ["@variable.builtin"]        = { fg = p.red },
+    ["@variable.parameter"]      = { fg = p.yellow },
+    ["@variable.parameter.builtin"] = { fg = p.yellow_dim },
+    ["@variable.member"]         = { fg = p.green_dim },
+    ["@property"]                = { fg = p.green_dim },
 
     -- Legacy aliases
     ["@parameter"]               = { link = "@variable.parameter" },
@@ -45,40 +45,40 @@ function M.get(p, _opts)
     -- -----------------------------------------------------------------
     -- KEYWORDS
     -- -----------------------------------------------------------------
-    ["@keyword"]                 = { fg = p.orange },
+    ["@keyword"]                 = { link = "Keyword" },
 
-    ["@keyword.operator"]        = { fg = p.yellow },
-    ["@keyword.conditional"]     = { fg = p.yellow },
-    ["@keyword.conditional.ternary"] = { fg = p.yellow },
-    ["@keyword.repeat"]          = { fg = p.yellow },
+    ["@keyword.operator"]        = { link = "@operator" },
+    ["@keyword.conditional"]     = { link = "Conditional" },
+    ["@keyword.conditional.ternary"] = { link = "Conditional" },
+    ["@keyword.repeat"]          = { link = "Repeat" },
 
     ["@keyword.type"]            = { link = "Type" },
-    ["@keyword.modifier"]        = { fg = p.orange_dim },
+    ["@keyword.modifier"]        = { link = "StorageClass" },
     ["@keyword.storage"]         = { link = "StorageClass" },
-    ["@keyword.directive"]       = { fg = p.orange_dim },
-    ["@keyword.directive.define"] = { link = "@keyword.directive" },
+    ["@keyword.directive"]       = { link = "PreProc" },
+    ["@keyword.directive.define"] = { link = "Define" },
 
-    ["@keyword.function"]        = { fg = p.green_dim },
-    ["@keyword.coroutine"]       = { fg = p.green_dim },
+    ["@keyword.function"]        = { fg = p.purple },
+    ["@keyword.coroutine"]       = { link = "@keyword" },
     ["@keyword.return"]          = { link = "@keyword" },
-    ["@keyword.exception"]       = { fg = p.green_dim },
-    ["@keyword.debug"]           = { fg = p.cyan, bold = true },
+    ["@keyword.exception"]       = { link = "Exception" },
+    ["@keyword.debug"]           = { link = "Debug" },
 
     ["@keyword.import"]          = { link = "Include" },
 
-    ["@label"]                   = { fg = p.yellow },
-    ["@storageclass"]            = { fg = p.orange_dim },
+    ["@label"]                   = { fg = p.blue },
+    ["@storageclass"]            = { link = "StorageClass" },
 
     -- -----------------------------------------------------------------
     -- FUNCTIONS & METHODS
     -- -----------------------------------------------------------------
-    ["@function"]                = { fg = p.yellow },
-    ["@function.method"]         = { fg = p.yellow_dim },
+    ["@function"]                = { link = "Function" },
+    ["@function.method"]         = { link = "Function" },
     ["@function.method.call"]    = { link = "@function.method" },
 
     ["@function.call"]           = { link = "@function" },
-    ["@function.macro"]          = { fg = p.yellow_light },
-    ["@function.builtin"]        = { fg = p.cyan },
+    ["@function.macro"]          = { link = "Macro" },
+    ["@function.builtin"]        = { link = "Special" },
 
     -- Legacy aliases
     ["@method"]                  = { link = "@function.method" },
@@ -87,18 +87,18 @@ function M.get(p, _opts)
     -- -----------------------------------------------------------------
     -- TYPES & STRUCTURE
     -- -----------------------------------------------------------------
-    ["@type"]                    = { fg = p.yellow_dim },
-    ["@type.definition"]         = { fg = p.yellow },
+    ["@type"]                    = { link = "Type" },
+    ["@type.definition"]         = { link = "Typedef" },
     ["@type.qualifier"]          = { link = "@keyword" },
-    ["@type.builtin"]            = { fg = p.purple },
+    ["@type.builtin"]            = { fg = p.blue_dim },
 
-    ["@constructor"]             = { fg = p.yellow },
+    ["@constructor"]             = { fg = p.purple },
     ["@constructor.tsx"]         = { fg = p.blue },
     ["@annotation"]              = { link = "PreProc" },
     ["@attribute"]               = { link = "PreProc" },
     ["@attribute.builtin"]       = { fg = p.purple_dim },
 
-    ["@module"]                  = { fg = p.cyan_dim },
+    ["@module"]                  = { link = "Include" },
     ["@module.builtin"]          = { fg = p.red },
     ["@namespace.builtin"]       = { link = "@variable.builtin" },
 
@@ -114,21 +114,21 @@ function M.get(p, _opts)
     -- -----------------------------------------------------------------
     -- OPERATORS & PUNCTUATION
     -- -----------------------------------------------------------------
-    ["@operator"]                = { fg = p.white },
+    ["@operator"]                = { fg = p.white_dim },
 
     ["@punctuation.bracket"]     = { fg = p.white_dim },
     ["@punctuation.delimiter"]   = { fg = p.white_dim },
-    ["@punctuation.special"]     = { fg = p.blue_dim },
+    ["@punctuation.special"]     = { fg = p.white_dim },
     ["@punctuation.special.markdown"] = { fg = p.orange },
     ["@punctuation"]             = { link = "Delimiter" },
 
     -- -----------------------------------------------------------------
     -- COMMENTS
     -- -----------------------------------------------------------------
-    ["@comment"]                 = { fg = p.black_light },
+    ["@comment"]                 = { link = "Comment" },
     ["@comment.documentation"]   = { fg = p.black_light, italic = true },
 
-    ["@comment.todo"]            = { fg = p.blue, bold = true },
+    ["@comment.todo"]            = { fg = p.blue },
     ["@comment.warning"]         = { fg = p.yellow },
     ["@comment.error"]           = { fg = p.red },
     ["@comment.note"]            = { fg = p.cyan },
@@ -139,13 +139,13 @@ function M.get(p, _opts)
     -- MARKUP
     -- -----------------------------------------------------------------
     ["@markup"]                  = { link = "@none" },
-    ["@markup.heading"]          = { fg = p.blue, bold = true },
-    ["@markup.heading.1"]        = { fg = p.orange, bold = true },
-    ["@markup.heading.2"]        = { fg = p.yellow, bold = true },
-    ["@markup.heading.3"]        = { fg = p.green_dim, bold = true },
-    ["@markup.heading.4"]        = { fg = p.cyan, bold = true },
-    ["@markup.heading.5"]        = { fg = p.blue, bold = true },
-    ["@markup.heading.6"]        = { fg = p.blue_dim, bold = true },
+    ["@markup.heading"]          = { link = "Title" },
+    ["@markup.heading.1"]        = { fg = p.orange },
+    ["@markup.heading.2"]        = { fg = p.yellow },
+    ["@markup.heading.3"]        = { fg = p.green_dim },
+    ["@markup.heading.4"]        = { fg = p.cyan },
+    ["@markup.heading.5"]        = { fg = p.blue },
+    ["@markup.heading.6"]        = { fg = p.blue_dim },
 
     ["@markup.strong"]           = { bold = true },
     ["@markup.italic"]           = { italic = true },
@@ -153,22 +153,22 @@ function M.get(p, _opts)
     ["@markup.strikethrough"]    = { strikethrough = true },
     ["@markup.underline"]        = { underline = true },
 
-    ["@markup.raw"]              = { fg = p.yellow_dim },
+    ["@markup.raw"]              = { link = "String" },
     ["@markup.raw.block"]        = { link = "@markup.raw" },
     ["@markup.raw.markdown_inline"] = { fg = p.blue, bg = p.accent1 },
-    ["@markup.quote"]            = { link = "@string.special" },
-    ["@markup.math"]             = { link = "@string.special" },
+    ["@markup.quote"]            = { link = "Special" },
+    ["@markup.math"]             = { link = "Special" },
     ["@markup.environment"]      = { link = "Macro" },
 
-    ["@markup.link"]             = { fg = p.cyan, underline = true },
-    ["@markup.link.label"]       = { fg = p.blue },
+    ["@markup.link"]             = { fg = p.cyan },
+    ["@markup.link.label"]       = { link = "SpecialChar" },
     ["@markup.link.label.symbol"] = { link = "Identifier" },
-    ["@markup.link.url"]         = { fg = p.cyan_light, underline = true },
+    ["@markup.link.url"]         = { link = "Underlined" },
 
-    ["@markup.list"]             = { fg = p.red },
+    ["@markup.list"]             = { fg = p.blue_dim },
     ["@markup.list.markdown"]    = { fg = p.orange, bold = true },
-    ["@markup.list.checked"]     = { link = "DiagnosticOk" },
-    ["@markup.list.unchecked"]   = { link = "DiagnosticWarn" },
+    ["@markup.list.checked"]     = { fg = p.green_dim },
+    ["@markup.list.unchecked"]   = { fg = p.blue },
 
     -- -----------------------------------------------------------------
     -- DIFF
@@ -180,12 +180,12 @@ function M.get(p, _opts)
     -- -----------------------------------------------------------------
     -- HTML / TAGS
     -- -----------------------------------------------------------------
-    ["@tag"]                     = { fg = p.orange },
-    ["@tag.delimiter"]           = { fg = p.white_dim },
+    ["@tag"]                     = { link = "Label" },
+    ["@tag.delimiter"]           = { link = "Delimiter" },
     ["@tag.attribute"]           = { link = "@property" },
     ["@tag.qualifier"]           = { fg = p.cyan_dim },
-    ["@tag.builtin"]             = { fg = p.orange_dim },
-    ["@tag.tsx"]                 = { fg = p.cyan, bold = true },
+    ["@tag.builtin"]             = { link = "Special" },
+    ["@tag.tsx"]                 = { fg = p.red },
     ["@tag.delimiter.tsx"]       = { fg = p.blue_dim },
     ["@tag.javascript"]          = { fg = p.red },
 

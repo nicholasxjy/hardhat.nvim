@@ -1,6 +1,6 @@
 local M = {}
 
-M.load_plugin_syntax = function(p)
+function M.get(p, _opts)
   return {
     -- ---------------------------------------------------------------------------
     -- LITERALS
@@ -36,7 +36,7 @@ M.load_plugin_syntax = function(p)
 
     ["@lsp.type.modifier"]                     = {},
 
-    ["@lsp.type.operator"]                     = { link = "@operator"},
+    ["@lsp.type.operator"]                     = { link = "@operator" },
     ["@lsp.typemod.operator.injected"]         = { italic = true },
 
     -- ---------------------------------------------------------------------------
@@ -61,9 +61,9 @@ M.load_plugin_syntax = function(p)
 
     ["@lsp.type.type"]                         = {},
     ["@lsp.type.typeAlias"]                    = { fg = p.yellow_dim },
-    ["@lsp.type.typeParameter"]                = { fg = p.yellow_light },
-    ["@lsp.type.generic"]                      = { fg = p.yellow_dim },
-    ["@lsp.type.interface"]                    = { fg = p.yellow },
+    ["@lsp.type.typeParameter"]                = { fg = p.purple_light },
+    ["@lsp.type.generic"]                      = { fg = p.purple_dim },
+    ["@lsp.type.interface"]                    = { fg = p.purple },
 
     ["@lsp.type.lifetime"]                     = { fg = p.blue_dim, italic = true },
 
@@ -101,14 +101,14 @@ M.load_plugin_syntax = function(p)
     -- ---------------------------------------------------------------------------
     -- DOCUMENTATION
     -- ---------------------------------------------------------------------------
-    ["@lsp.type.comment"]                      = { link = "@comment"},
+    ["@lsp.type.comment"]                      = { link = "@comment" },
 
     -- ---------------------------------------------------------------------------
     -- MODS
     -- ---------------------------------------------------------------------------
     ["@lsp.mod.declaration"]                   = {},
     ["@lsp.mod.deprecated"]                    = { sp = p.red, strikethrough = true },
-    ["@lsp.typemod.macro.globalScope"]         = { fg = p.orange_light},
+    ["@lsp.typemod.macro.globalScope"]         = { fg = p.orange_light },
   }
 end
 

@@ -42,6 +42,10 @@ M.load_colors = function()
     white         = "#9aa0a4",
     white_light   = "#b0b4b8",
     white_dim     = "#7a7e81",
+
+    purple        = "#836eb8",
+    purple_light  = "#a393c6",
+    purple_dim    = "#67599a",
   }
 end
 

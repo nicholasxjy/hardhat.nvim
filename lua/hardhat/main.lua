@@ -3,7 +3,9 @@ local M = {}
 M.transparent_groups = {
 	["Normal"] = true,
 	["NormalNC"] = true,
+	["NormalSB"] = true,
 	["SignColumn"] = true,
+	["SignColumnSB"] = true,
 	["FoldColumn"] = true,
 	["EndOfBuffer"] = true,
 	["StatusLine"] = true,
@@ -23,9 +25,11 @@ local function paint(syntax, opts)
 	}
 
 	for group, hl in pairs(syntax) do
-		-- global bold/italics
-		hl.bold = styles.bold ~= false and hl.bold
-		hl.italic = styles.italics ~= false and hl.italic
+		if not hl.link then
+			-- global bold/italics
+			hl.bold = styles.bold ~= false and hl.bold
+			hl.italic = styles.italics ~= false and hl.italic
+		end
 
 		-- apply transparency if set
 		if opts.transparent and M.transparent_groups[group] then
@@ -48,23 +52,12 @@ function M.load(opts, palette)
 		vim.cmd("syntax reset")
 	end
 
-	-- get highlights
+	-- load palette
 	local palette_path = "hardhat.palettes." .. palette
 	local p = require(palette_path).load_colors()
-	local h = require("hardhat.highlights")
 
-	local syntax = h.load_base_syntax(p)
-
-	for plugin_name, enabled in pairs(opts.plugin_support) do
-		if enabled then
-			local plugin_path = "hardhat.plugins." .. plugin_name
-			local status, plugin = pcall(require, plugin_path)
-			if status then
-				local plugin_highlights = plugin.load_plugin_syntax(p)
-				syntax = vim.tbl_deep_extend("force", syntax, plugin_highlights)
-			end
-		end
-	end
+	-- load all highlight groups
+	local syntax = require("hardhat.groups").setup(p, opts)
 
 	-- add user highlight overrides
 	syntax = vim.tbl_deep_extend("force", syntax, opts.hl_overrides)

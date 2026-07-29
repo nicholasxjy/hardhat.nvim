@@ -107,6 +107,7 @@ M.load_plugin_syntax = function(p)
     -- MODS
     -- ---------------------------------------------------------------------------
     ["@lsp.mod.declaration"]                   = {},
+    ["@lsp.mod.deprecated"]                    = { sp = p.red, strikethrough = true },
     ["@lsp.typemod.macro.globalScope"]         = { fg = p.orange_light},
   }
 end

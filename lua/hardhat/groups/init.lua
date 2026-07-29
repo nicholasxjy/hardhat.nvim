@@ -21,6 +21,9 @@ M.optional = {
   dashboard       = "dashboard",
   lazy            = "lazy",
   mini            = "mini",
+  snacks          = "snacks",
+  noice           = "noice",
+  navic           = "navic",
 }
 
 function M.setup(p, opts)
